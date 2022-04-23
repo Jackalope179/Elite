@@ -2,10 +2,10 @@ import React from "react";
 import "./postStyle.css";
 import PostContent from "../commonComponent/postcontent/postContent";
 
-const RecipeReviewCard = () => {
+const RecipeReviewCard = (data) => {
   return (
     <div className="container post-container my-4">
-      <PostContent width={600} hasButtons={true} />
+      <PostContent width={600} hasButtons={true} data={data}/>
     </div>
   );
 };
