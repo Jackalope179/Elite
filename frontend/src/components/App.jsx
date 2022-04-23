@@ -1,7 +1,8 @@
 import React from "react";
+import Detail from "./detailComponent/detail";
 
 const App = () => {
-  return <div>App</div>;
+  return <Detail />;
 };
 
 export default App;
