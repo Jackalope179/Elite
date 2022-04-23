@@ -9,7 +9,7 @@ const App = () => {
     <>
       <Navbar id="navbar_" />
       <div className="container" id="body" style={{ overflow: "hidden" }}>
-        <div className="container">
+        <div className="container" id="scrollbar">
           <RecipeReviewCard />
           <RecipeReviewCard />
           <RecipeReviewCard />
