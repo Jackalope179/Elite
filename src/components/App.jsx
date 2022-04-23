@@ -1,7 +1,12 @@
 import React from "react";
+import RecipeReviewCard from "./postComponent/post";
 
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <RecipeReviewCard />
+    </div>
+  )
 };
 
 export default App;
