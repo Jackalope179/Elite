@@ -21,7 +21,7 @@ function LinearProgressWithLabel(props) {
         </Box>
         <Box style={{paddingTop: "0px"}} display="flex" alignItems="center" p={3}>
             <Box width="100%" mr={3}>
-                <LinearProgress variant="determinate" value={ratio > 100 ? 100 : ratio} />
+                <LinearProgress style={{height: "10px"}} variant="determinate" value={ratio > 100 ? 100 : ratio} />
             </Box>
             <Box minWidth={35}>
                 <Typography variant="body2" color="textSecondary">{`${Math.round(
