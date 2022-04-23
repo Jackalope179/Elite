@@ -1,0 +1,8 @@
+div #SideBar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: calc(100% - 60px);
+  width: 20%;
+  background-color: aqua;
+}

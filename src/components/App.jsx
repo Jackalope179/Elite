@@ -1,12 +1,13 @@
 import React from "react";
-import Profile from "./profileComponent/profile";
-
+import Navbar from "./commonComponent/Navbar";
+import SideBar from "./commonComponent/SideBar";
 const App = () => {
-    return (
-        <>
-            <Profile />
-        </>
-    );
+  return (
+    <div>
+      <Navbar />
+      <SideBar />
+    </div>
+  );
 };
 
 export default App;
