@@ -1,7 +1,12 @@
 import React from "react";
+import Profile from "./profileComponent/profile";
 
 const App = () => {
-  return <div>App</div>;
+    return (
+        <>
+            <Profile />
+        </>
+    );
 };
 
 export default App;
