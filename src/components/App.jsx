@@ -9,7 +9,30 @@ const App = () => {
     return (
         <Routes>
             <Route path="/profile" exact element={<Profile />} />
-            <Route path="/newfeeds" exact element={<></>} />
+            <Route
+                path="/newfeeds"
+                exact
+                element={
+                    <>
+                        <Navbar id="navbar_" />
+                        <div
+                            className="container"
+                            id="body"
+                            style={{ overflow: "hidden" }}
+                        >
+                            <div className="container" id="scrollbar">
+                                <RecipeReviewCard />
+                                <RecipeReviewCard />
+                                <RecipeReviewCard />
+                                <RecipeReviewCard />
+                                <RecipeReviewCard />
+                                <RecipeReviewCard />
+                            </div>
+                            <SideBar />
+                        </div>
+                    </>
+                }
+            />
         </Routes>
     );
 };
