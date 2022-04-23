@@ -8,7 +8,7 @@ const SideBar = () => {
     <div id="SideBar" className="container">
       <div className="row">
         <div className="col-3">
-          <Avatar sx={{ bgcolor: "orange" }}>N</Avatar>
+          <Avatar sx={{ bgcolor: "orange", marginTop: "6px" }}>N</Avatar>
         </div>
         <div className="col-9">
           <div className="row" style={{ color: "#999999" }}>
