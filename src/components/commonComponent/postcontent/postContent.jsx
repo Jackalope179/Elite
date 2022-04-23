@@ -15,6 +15,17 @@ import ShareIcon from "@mui/icons-material/Share";
 import CardActions from "@mui/material/CardActions";
 
 export default function PostContent({ width, hasButtons, data }) {
+  const [liked, setLiked] = React.useState(data.liked);
+
+  const handleLike = () => {
+    setLiked(true);
+    data.liked = true;
+  }
+
+  const handleUnLike = () => {
+    setLiked(false);
+    data.liked = false;
+  }
   return (
     <Card
       sx={{ maxWidth: { width }, bgcolor: grey[100] }}
@@ -23,22 +34,22 @@ export default function PostContent({ width, hasButtons, data }) {
       <CardHeader
         avatar={
           <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {data.data.avatar}
+            {data.avatar}
           </Avatar>
         }
-        title={data.data.name}
-        subheader={data.data.time}
+        title={data.name}
+        subheader={data.time}
       />
-      <ImgCarousel width={width} imgs={data.data.imgs}/>
+      <ImgCarousel width={width} imgs={data.imgs}/>
       <CardContent>
         <Typography variant="body" style={{ fontWeight: 400 }}>
-          {data.data.content}
+          {data.content}
         </Typography>
       </CardContent>
       {hasButtons ? (
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            {data.data.liked ? <FavoriteIcon style={{color: "red"}}/> : <FavoriteBorderIcon /> }
+          <IconButton aria-label="add to favorites" onClick={liked ? handleUnLike : handleLike}>
+            {liked ? <FavoriteIcon style={{color: "red"}}/> : <FavoriteBorderIcon /> }
           </IconButton>
           <IconButton aria-label="add to favorites">
             <AttachMoneyIcon />
