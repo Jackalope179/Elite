@@ -14,6 +14,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import HomeIcon from "@mui/icons-material/Home";
+import { useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -55,6 +56,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
+  let navigate = useNavigate();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
@@ -88,7 +90,14 @@ export default function Navbar() {
         width: "300px !important",
       }}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem
+        onClick={() => {
+          handleMenuClose();
+          navigate("/profile");
+        }}
+      >
+        Profile
+      </MenuItem>
       <MenuItem onClick={handleMenuClose}>Log out</MenuItem>
     </Menu>
   );
@@ -134,6 +143,9 @@ export default function Navbar() {
               size="large"
               aria-label="show 4 new mails"
               color="inherit"
+              onClick={() => {
+                navigate("/");
+              }}
             >
               {/* <Badge badgeContent={4} color="error"> */}
               <HomeIcon style={{ width: "35px", height: "35px" }} />

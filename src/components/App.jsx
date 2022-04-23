@@ -10,7 +10,7 @@ const App = () => {
     <Routes>
       <Route path="/profile" exact element={<Profile />} />
       <Route
-        path="/newfeeds"
+        path="/"
         exact
         element={
           <>
