@@ -3,7 +3,7 @@ import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import "../../style/profile.css";
 import Navbar from "../commonComponent/Navbar";
-import PostContent from "../commonComponent/postcontent/postContent";
+import RecipeReviewCard from "../postComponent/post";
 import { PostData } from "../../data/PostData";
 
 const Profile = () => {
@@ -66,10 +66,11 @@ const Profile = () => {
           </div>
         </div>
         <div className="profile-right">
-          <PostContent width="90%" />
-          <PostContent width="90%" />
-          <PostContent width="90%" />
-          <PostContent width="90%" />
+          {PostData.map((data) => {
+            return (
+              <RecipeReviewCard data={data} hasButton={false} key={data.id} />
+            );
+          })}
         </div>
       </div>
     </>
