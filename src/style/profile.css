@@ -1,15 +1,14 @@
 body{
     overflow: hidden;
-    padding: 0 110px;
 }
 
 .profile{
     position: relative;
-    top: 60px;
     width: 100%;
     height: calc(100vh - 60px);
     overflow: hidden;
     display: flex;
+    padding: 0 110px;
 }
 
 .profile-left{
@@ -70,6 +69,32 @@ body{
     width: fit-content;
     height: auto;
     margin: auto;
+}
+
+.profile-activities{
+    width: 90%;
+    height: calc(100% - 70px);
+    margin: auto;
+    padding: 10px 0;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+
+.profile-activity{
+    width: 90%;
+    height: 70px;
+    background-color: #abcdef;
+    margin: 10px auto;
+    border-radius: 5px;
+    padding: auto 10px;
+}
+
+.profile-activity h4{
+    display: inline;
+}
+.profile-activity h5{
+    display: inline;
+    float: right;
 }
 
 .profile-right{
