@@ -1,0 +1,8 @@
+#SideBar {
+  margin: 25px 5px;
+  padding: 5px;
+  height: calc(100% - 60px);
+  width: 30% !important;
+  background-color: #ffffff;
+  overflow: hidden;
+}
