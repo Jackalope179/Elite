@@ -58,7 +58,10 @@ const ImgCarousel = () => {
         {slideImages.map((slideImage, index) => (
           <div className="each-slide" key={index}>
             <div
-              style={{ backgroundImage: `url(${slideImage.url})`, height: 450 }}
+              style={{
+                backgroundImage: `url(${slideImage.url})`,
+                height: 500,
+              }}
             ></div>
           </div>
         ))}
