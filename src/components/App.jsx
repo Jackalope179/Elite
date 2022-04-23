@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./commonComponent/Navbar";
 import SideBar from "./commonComponent/SideBar";
 import PostList from "./postlistComponent/PostList";
-import Profile from "./profileComponent/Profile";
+import Profile from "./profileComponent/profile";
 import { Route, Routes } from "react-router-dom";
 import "../style/App.css";
 import Login from "./logComponent/login";
