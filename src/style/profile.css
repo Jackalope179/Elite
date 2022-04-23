@@ -54,7 +54,7 @@ body {
 .profile-left-1-2 h5 {
   margin: 10px 0 0 10px;
   user-select: none;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .profile-left-2 {
@@ -76,7 +76,7 @@ body {
   user-select: none;
 }
 .profile-left-2-head h3 {
-  font-size: 28px;
+  font-size: 25px;
 }
 
 .profile-activities {
@@ -98,7 +98,7 @@ body {
 
 .profile-activity {
   width: 90%;
-  height: 54px;
+  height: 45px;
   background-color: #abcdef;
   margin-bottom: 15px;
   margin-left: auto;
@@ -111,7 +111,7 @@ body {
   margin-left: 10px;
   display: inline;
   user-select: none;
-  font-size: 25px;
+  font-size: 16px;
 }
 
 .profile-activity h5 {
@@ -119,7 +119,7 @@ body {
   float: right;
   margin-right: 10px;
   user-select: none;
-  font-size: 25px;
+  font-size: 16px;
 }
 
 
