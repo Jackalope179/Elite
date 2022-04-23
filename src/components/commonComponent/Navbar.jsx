@@ -134,14 +134,23 @@ export default function Navbar() {
                             borderRadius: "15px",
                             marginLeft: "260px",
                             height: "37px",
+                            paddingLeft: 50,
                         }}
                     >
-                        <SearchIconWrapper>
+                        <SearchIconWrapper
+                            style={{
+                                position: "absolute",
+                                left: 0,
+                            }}
+                        >
                             <SearchIcon />
                         </SearchIconWrapper>
                         <StyledInputBase
                             placeholder="Search…"
                             inputProps={{ "aria-label": "search" }}
+                            style={{
+                                top: -0.5,
+                            }}
                         />
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />

@@ -2,12 +2,10 @@ import React from "react";
 import "./postStyle.css";
 import PostContent from "../commonComponent/postcontent/postContent";
 
-const RecipeReviewCard = (data) => {
+export default function RecipeReviewCard({ data, hasButton }) {
     return (
         <div className="container post-container my-4">
-            <PostContent width={"100%"} hasButtons={true} data={data} />
+            <PostContent width={"100%"} hasButtons={hasButton} data={data} />
         </div>
     );
-};
-
-export default RecipeReviewCard;
+}
