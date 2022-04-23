@@ -1,8 +1,11 @@
-import React from 'react'
-
+import React from 'react';
+import "./postStyle.css";
+import PostContent from "../commonComponent/postcontent/postContent";
 const post = () => {
   return (
-    <div>post</div>
+    <div className='container post-container'>
+        <PostContent />
+    </div>
   )
 }
 
