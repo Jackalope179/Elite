@@ -4,6 +4,7 @@ import Avatar from "@mui/material/Avatar";
 import "../../style/profile.css";
 import Navbar from "../commonComponent/Navbar";
 import PostContent from "../commonComponent/postcontent/postContent";
+import { PostData } from "../../data/PostData";
 
 const Profile = () => {
     const [infor, setInfor] = useState({
@@ -72,10 +73,10 @@ const Profile = () => {
                     </div>
                 </div>
                 <div className="profile-right">
+                    <PostContent width="90%" data={PostData} />
+                    {/* <PostContent width="90%" />
                     <PostContent width="90%" />
-                    <PostContent width="90%" />
-                    <PostContent width="90%" />
-                    <PostContent width="90%" />
+                    <PostContent width="90%" /> */}
                 </div>
             </div>
         </>

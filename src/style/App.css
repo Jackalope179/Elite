@@ -19,6 +19,7 @@ body {
   margin: auto;
   display: flex;
   padding: 0 110px;
+  max-width: 100%;
 }
 
 #body > .container {
