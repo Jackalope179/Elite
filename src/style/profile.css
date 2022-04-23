@@ -120,6 +120,9 @@ body {
 
 .profile-right > div {
   margin-top: 20px;
+  margin-bottom: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
