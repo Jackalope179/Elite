@@ -4,6 +4,7 @@ import Avatar from "@mui/material/Avatar";
 import "../../style/profile.css";
 import Navbar from "../commonComponent/Navbar";
 import PostContent from "../commonComponent/postcontent/postContent";
+import { PostData } from "../../data/PostData";
 
 const Profile = () => {
   const [infor, setInfor] = useState({

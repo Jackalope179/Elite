@@ -1,14 +1,16 @@
 import React from "react";
 import Navbar from "./commonComponent/Navbar";
 import SideBar from "./commonComponent/SideBar";
-import RecipeReviewCard from "./postComponent/post";
+import PostList from "./postlistComponent/PostList";
 import Profile from "./profileComponent/profile";
 import { Route, Routes } from "react-router-dom";
 import "../style/App.css";
+import Login from "./logComponent/login";
 const App = () => {
   return (
     <Routes>
       <Route path="/profile" exact element={<Profile />} />
+      <Route path="/login" exact element={<Login />} />
       <Route
         path="/"
         exact
@@ -16,14 +18,7 @@ const App = () => {
           <>
             <Navbar id="navbar_" />
             <div className="container" id="body" style={{ overflow: "hidden" }}>
-              <div className="container" id="scrollbar">
-                <RecipeReviewCard />
-                <RecipeReviewCard />
-                <RecipeReviewCard />
-                <RecipeReviewCard />
-                <RecipeReviewCard />
-                <RecipeReviewCard />
-              </div>
+              <PostList />
               <SideBar />
             </div>
           </>
