@@ -1,8 +1,10 @@
 import React from "react";
 import { TextField, Typography, Button } from "@mui/material";
 import "../../style/login.css";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+    let navigate = useNavigate();
     return (
         <>
             <div className="login">
@@ -18,7 +20,14 @@ const Login = () => {
                         label="Password"
                         variant="outlined"
                     />
-                    <Button variant="contained">Login</Button>
+                    <Button
+                        variant="contained"
+                        onClick={() => {
+                            navigate("/");
+                        }}
+                    >
+                        Login
+                    </Button>
                     <Button className="register" variant="outlined">
                         Register
                     </Button>
