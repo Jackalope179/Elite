@@ -3,6 +3,7 @@ import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import "../../style/profile.css";
 import Navbar from "../commonComponent/Navbar";
+import PostContent from "../commonComponent/postcontent/postContent";
 
 const Profile = () => {
     return (
@@ -31,18 +32,24 @@ const Profile = () => {
                                 <Typography variant="h4">A</Typography>
                                 <Typography variant="h5">100000đ</Typography>
                             </div>
-                            <div className="profile-activity"></div>
-                            <div className="profile-activity"></div>
-                            <div className="profile-activity"></div>
-                            <div className="profile-activity"></div>
+                            <div className="profile-activity">
+                                <Typography variant="h4">A</Typography>
+                                <Typography variant="h5">100000đ</Typography>
+                            </div>
+                            <div className="profile-activity">
+                                <Typography variant="h4">A</Typography>
+                                <Typography variant="h5">100000đ</Typography>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div className="profile-right">
-                    <div className="profile-item"></div>
-                    <div className="profile-item"></div>
-                    <div className="profile-item"></div>
-                    <div className="profile-item"></div>
+                    <PostContent />
+                    <PostContent />
+                    <PostContent />
+                    <PostContent />
+                    <PostContent />
+                    <PostContent />
                 </div>
             </div>
         </>
