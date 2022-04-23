@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./commonComponent/Navbar";
 import SideBar from "./commonComponent/SideBar";
-import RecipeReviewCard from "./postComponent/Post";
+import RecipeReviewCard from "./postComponent/post";
 import Profile from "./profileComponent/profile";
 import { Route, Routes } from "react-router-dom";
 import "../style/App.css";

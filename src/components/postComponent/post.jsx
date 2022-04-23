@@ -4,7 +4,7 @@ import PostContent from "../commonComponent/postcontent/postContent";
 
 const RecipeReviewCard = () => {
   return (
-    <div className="container post-container my-3">
+    <div className="container post-container my-4">
       <PostContent width={600} hasButtons={true} />
     </div>
   );
