@@ -13,10 +13,10 @@ body {
   top: 60px;
   width: 100%;
   height: calc(100vh - 60px);
-  padding: auto 110px;
+  padding: 0 110px;
   overflow-x: hidden;
   overflow-y: hidden;
-  margin: auto;
+  margin: 0px;
   display: flex;
   padding: 0 110px;
 }

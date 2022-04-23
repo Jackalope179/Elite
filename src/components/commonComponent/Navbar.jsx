@@ -15,6 +15,16 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
+import Dialog_Form from "./Dialog_Form";
+// import Dialog from "./Dialog_Form";
+
+// import Button from "@mui/material/Button";
+// import TextField from "@mui/material/TextField";
+// import Dialog from "@mui/material/Dialog";
+// import DialogActions from "@mui/material/DialogActions";
+// import DialogContent from "@mui/material/DialogContent";
+// import DialogContentText from "@mui/material/DialogContentText";
+// import DialogTitle from "@mui/material/DialogTitle";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -102,88 +112,128 @@ export default function Navbar() {
     </Menu>
   );
 
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
-    <Box sx={{ flexGrow: 1 }} elevation={0}>
-      <AppBar
-        position="fixed"
-        style={{
-          height: "60px",
-          padding: "0px 110px",
-        }}
-        elevation={0}
-      >
-        <Toolbar>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
-            ELITE
-          </Typography>
-          <Search
-            style={{
-              width: "300px",
-              borderRadius: "15px",
-              marginLeft: "260px",
-              height: "37px",
-            }}
-          >
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-              onClick={() => {
-                navigate("/");
+    <>
+      <Box sx={{ flexGrow: 1 }} elevation={0}>
+        <AppBar
+          position="fixed"
+          style={{
+            height: "60px",
+            padding: "0px 110px",
+          }}
+          elevation={0}
+        >
+          <Toolbar>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{ display: { xs: "none", sm: "block" } }}
+            >
+              ELITE
+            </Typography>
+            <Search
+              style={{
+                width: "300px",
+                borderRadius: "15px",
+                marginLeft: "260px",
+                height: "37px",
               }}
             >
-              {/* <Badge badgeContent={4} color="error"> */}
-              <HomeIcon style={{ width: "35px", height: "35px" }} />
-              {/* </Badge> */}
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 4 new mails"
-              color="inherit"
-            >
-              {/* <Badge badgeContent={4} color="error"> */}
-              <AddCircleIcon style={{ width: "30px", height: "30px" }} />
-              {/* </Badge> */}
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge badgeContent={17} color="error">
-                <NotificationsIcon style={{ width: "30px", height: "30px" }} />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle style={{ width: "30px", height: "30px" }} />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {renderMenu}
-    </Box>
+              <SearchIconWrapper>
+                <SearchIcon />
+              </SearchIconWrapper>
+              <StyledInputBase
+                placeholder="Search…"
+                inputProps={{ "aria-label": "search" }}
+              />
+            </Search>
+            <Box sx={{ flexGrow: 1 }} />
+            <Box sx={{ display: { xs: "none", md: "flex" } }}>
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                color="inherit"
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                {/* <Badge badgeContent={4} color="error"> */}
+                <HomeIcon style={{ width: "35px", height: "35px" }} />
+                {/* </Badge> */}
+              </IconButton>
+              <IconButton
+                size="large"
+                aria-label="show 4 new mails"
+                color="inherit"
+              >
+                {/* <Badge badgeContent={4} color="error"> */}
+                <AddCircleIcon
+                  style={{ width: "30px", height: "30px" }}
+                  onClick={handleClickOpen}
+                />
+                {/* </Badge> */}
+              </IconButton>
+              <IconButton
+                size="large"
+                aria-label="show 17 new notifications"
+                color="inherit"
+              >
+                <Badge badgeContent={17} color="error">
+                  <NotificationsIcon
+                    style={{ width: "30px", height: "30px" }}
+                  />
+                </Badge>
+              </IconButton>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-label="account of current user"
+                aria-controls={menuId}
+                aria-haspopup="true"
+                onClick={handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle style={{ width: "30px", height: "30px" }} />
+              </IconButton>
+            </Box>
+          </Toolbar>
+        </AppBar>
+        {renderMenu}
+      </Box>
+      <Dialog_Form open={open} onClose={handleClose} />
+      {/* <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>Subscribe</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            To subscribe to this website, please enter your email address here.
+            We will send updates occasionally.
+          </DialogContentText>
+          <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Email Address"
+            type="email"
+            fullWidth
+            variant="standard"
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleClose}>Subscribe</Button>
+        </DialogActions>
+      </Dialog> */}
+    </>
   );
 }

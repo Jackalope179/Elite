@@ -1,0 +1,9 @@
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  border-radius: 20px !important;
+}
+
+#dialog-form-icon {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
