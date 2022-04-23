@@ -82,7 +82,10 @@ export default function Navbar() {
       }}
       open={isMenuOpen}
       onClose={handleMenuClose}
-      style={{ marginTop: "50px", width: "300px !important" }}
+      style={{
+        marginTop: "50px",
+        width: "300px !important",
+      }}
     >
       <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
       <MenuItem onClick={handleMenuClose}>Log out</MenuItem>
@@ -90,10 +93,14 @@ export default function Navbar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} elevation={0}>
       <AppBar
-        position="static"
-        style={{ height: "60px", padding: "0px 110px" }}
+        position="fixed"
+        style={{
+          height: "60px",
+          padding: "0px 110px",
+        }}
+        elevation={0}
       >
         <Toolbar>
           <Typography

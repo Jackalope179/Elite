@@ -1,9 +1,12 @@
-import React from 'react'
-
-const post = () => {
+import React from "react";
+import "./postStyle.css";
+import PostContent from "../commonComponent/postcontent/postContent";
+const RecipeReviewCard = () => {
   return (
-    <div>post</div>
-  )
-}
+    <div className="container post-container my-3">
+      <PostContent />
+    </div>
+  );
+};
 
-export default post
+export default RecipeReviewCard;
