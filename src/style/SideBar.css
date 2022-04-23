@@ -1,9 +1,9 @@
-div #SideBar {
-  position: fixed;
-  bottom: 0;
-  right: 110px;
+#SideBar {
+  /* position: fixed;
+  bottom: 0; */
+  /* right: 110px; */
   height: calc(100% - 60px);
-  width: 20%;
-  padding-top: 30px;
+  width: 20% !important;
+  /* padding-top: 30px; */
   background-color: #ffffff;
 }
