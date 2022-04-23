@@ -1,0 +1,44 @@
+.login{
+    width: 100vw;
+    height: 100vh;
+}
+
+.login h4{
+    position: relative;
+    left: 50%;
+    transform: translate(-10%, 0);
+    user-select: none;
+}
+
+.login > form{
+    position: absolute;
+    width: 450px;
+    height: fit-content;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #abcdef;
+    border-radius: 5px;
+    padding: 50px 0;
+}
+
+.login > form > div{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+.login>form>button{
+    width: 25%;
+    margin-left: 10%;
+    margin-top: 10%;
+    height: 40px;
+}
+
+.login .register{
+    width: 25%;
+    margin-right: 10%;
+    margin-top: 10%;
+    float: right;
+    height: 40px;
+}
