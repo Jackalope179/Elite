@@ -13,6 +13,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import HomeIcon from '@mui/icons-material/Home';
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -129,6 +130,15 @@ export default function Navbar() {
           </Search>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
+          <IconButton
+              size="large"
+              aria-label="show 4 new mails"
+              color="inherit"
+            >
+              {/* <Badge badgeContent={4} color="error"> */}
+              <HomeIcon style={{ width: "35px", height: "35px" }} />
+              {/* </Badge> */}
+            </IconButton>
             <IconButton
               size="large"
               aria-label="show 4 new mails"
