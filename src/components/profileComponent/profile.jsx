@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Typography from "@mui/material/Typography";
 import Avatar from "@mui/material/Avatar";
 import "../../style/profile.css";
@@ -20,7 +20,15 @@ const Profile = () => {
         },
         { name: "B", monney: 1020 },
         { name: "C", monney: 1500 },
+        { name: "asd", monney: 10210 },
+        { name: "ascc", monney: 15120 },
     ]);
+
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        setTotal(activities.reduce((x, y) => x + y.monney, 0));
+    }, []);
 
     return (
         <>
@@ -36,7 +44,9 @@ const Profile = () => {
                         </div>
                         <div className="profile-left-1-2">
                             <Typography variant="h3">{infor.name}</Typography>
-                            <Typography variant="h5">5 activities</Typography>
+                            <Typography variant="h5">
+                                {activities.length} activities
+                            </Typography>
                         </div>
                     </div>
                     <div className="profile-left-2">
@@ -54,6 +64,10 @@ const Profile = () => {
                                     </Typography>
                                 </div>
                             ))}
+                        </div>
+                        <div className="profile-activity">
+                            <Typography variant="h4">Total</Typography>
+                            <Typography variant="h5">{total}đ</Typography>
                         </div>
                     </div>
                 </div>
