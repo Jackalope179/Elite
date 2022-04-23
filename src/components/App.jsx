@@ -6,6 +6,7 @@ import Profile from "./profileComponent/profile";
 import { Route, Routes } from "react-router-dom";
 import "../style/App.css";
 import Login from "./logComponent/login";
+import Detail from "./detailComponent/detail";
 const App = () => {
     return (
         <Routes>
@@ -28,6 +29,7 @@ const App = () => {
                     </>
                 }
             />
+            <Route path="/donate" exact element={<Detail />} />
         </Routes>
     );
 };
