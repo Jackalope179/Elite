@@ -17,6 +17,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import { NotiContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import Dialog_Form from "./Dialog_Form";
+import Mail from "./mail.png";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -140,14 +141,26 @@ export default function Navbar() {
           elevation={0}
         >
           <Toolbar>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ display: { xs: "none", sm: "block" } }}
+            <div
+              style={{ display: "flex", cursor: "pointer", color: "white" }}
+              onClick={() => {
+                navigate("/");
+              }}
             >
-              ELITE
-            </Typography>
+              <Typography
+                variant="h6"
+                noWrap
+                component="div"
+                sx={{ display: { xs: "none", sm: "block" } }}
+              >
+                ELITE
+              </Typography>
+              <img
+                src={Mail}
+                alt="mail"
+                style={{ color: "white", width: 30, height: 30, marginLeft: 7 }}
+              />
+            </div>
             <Search
               style={{
                 width: "300px",
