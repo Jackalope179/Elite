@@ -7,6 +7,7 @@ import { Route, Routes } from "react-router-dom";
 import "../style/App.css";
 import Login from "./logComponent/login";
 import Detail from "./detailComponent/detail";
+import PostMomo from "./detailComponent/post_momo";
 import Noti from "./notiComponent/Noti";
 import Register from "./logComponent/register";
 
@@ -40,6 +41,7 @@ const App = () => {
             }
           />
           <Route path="/donate" exact element={<Detail />} />
+          <Route path="/post_momo" exact element={<PostMomo />} />
         </Routes>
       </div>
     </NotiContext.Provider>
