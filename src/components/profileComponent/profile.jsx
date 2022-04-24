@@ -4,7 +4,7 @@ import Avatar from "@mui/material/Avatar";
 import "../../style/profile.css";
 import Navbar from "../commonComponent/Navbar";
 import RecipeReviewCard from "../postComponent/post";
-import { PostData } from "../../data/PostData";
+import PostData from "../../data/PostData";
 
 const Profile = () => {
     const [infor, setInfor] = useState({

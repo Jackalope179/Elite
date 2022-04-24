@@ -19,12 +19,10 @@ export default function PostContent({ width, hasButtons, data }) {
 
   const handleLike = () => {
     setLiked(true);
-    data.liked = true;
   }
 
   const handleUnLike = () => {
     setLiked(false);
-    data.liked = false;
   }
   return (
     <Card

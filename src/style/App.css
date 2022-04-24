@@ -32,3 +32,8 @@ body {
 #scrollbar::-webkit-scrollbar {
   display: none; /* Safari and Chrome */
 }
+
+div.routes-container {
+  position: absolute;
+  top: -1px;
+}

@@ -14,6 +14,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import HomeIcon from "@mui/icons-material/Home";
+import {NotiContext} from "../App";
 import { useNavigate } from "react-router-dom";
 
 const Search = styled("div")(({ theme }) => ({
@@ -57,6 +58,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Navbar() {
     let navigate = useNavigate();
+    const [notiOpen, setNotiOpen] = React.useContext(NotiContext);
+
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const isMenuOpen = Boolean(anchorEl);
@@ -69,6 +72,9 @@ export default function Navbar() {
         setAnchorEl(null);
     };
 
+    const handleNoti = () => {
+        setNotiOpen(!notiOpen);
+    }
     const menuId = "primary-search-account-menu";
     const renderMenu = (
         <Menu
@@ -176,7 +182,7 @@ export default function Navbar() {
                         >
                             {/* <Badge badgeContent={4} color="error"> */}
                             <AddCircleIcon
-                                style={{ width: "30px", height: "30px" }}
+                                style={{ width: "30px", height: "30px"}}
                             />
                             {/* </Badge> */}
                         </IconButton>
@@ -184,10 +190,11 @@ export default function Navbar() {
                             size="large"
                             aria-label="show 17 new notifications"
                             color="inherit"
+                            onClick={() => handleNoti()}
                         >
-                            <Badge badgeContent={17} color="error">
+                            <Badge badgeContent={notiOpen ? null : 1} color="error">
                                 <NotificationsIcon
-                                    style={{ width: "30px", height: "30px" }}
+                                    style={{ width: "30px", height: "30px"}}
                                 />
                             </Badge>
                         </IconButton>

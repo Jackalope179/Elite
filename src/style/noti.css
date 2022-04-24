@@ -1,0 +1,18 @@
+div.comment-container {
+    width: 400px;
+    height: auto;
+    background-color: #eee;
+    position: fixed;
+    z-index: 100;
+    left: 900px;
+    top:60px;
+}
+
+div.message-container {
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+div.message-container:last-child {
+    border-bottom: none;
+}
