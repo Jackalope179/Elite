@@ -4,16 +4,18 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import PropTypes from "prop-types";
-import TextField from "@mui/material/TextField";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputAdornment from "@mui/material/InputAdornment";
 import NumberFormat from "react-number-format";
 import $ from 'jquery';
-// import { makeStyles } from "@mui/styles";
 
 function LinearProgressWithLabel(props) {
     let ratio = props.value * 100 / props.targ;
     return <>
         <Box style={{paddingBottom: "0px"}} display="flex" alignItems="center" p={3}>
-            <Box minWidth={35}>
+            <Box minWidth={35} style={{fontFamily: "Roboto, Helvetica, Arial, sans-serif"}}>
                 <NumberFormat value={props.value} displayType={"text"} thousandSeparator={true} suffix={" VND"} />
                 &nbsp; / &nbsp;
                 <NumberFormat value={props.targ} displayType={"text"} thousandSeparator={true} suffix={" VND"} />
@@ -68,11 +70,18 @@ const submitDonate = (e) => {
 
 const DonateInputField = () => {
     return <>
-        <Box style={{paddingBottom: "0px"}} display="flex" alignItems="center" p={3}>
+        <Box style={{paddingBottom: "0px", paddingTop: "0px"}} display="flex" alignItems="center" p={3}>
             <Box minWidth={35}>
-                <TextField width="100%" type="number" id="donate_amount" label="Donate (VND)" variant="standard" />
+                <FormControl style={{marginLeft: "0px"}} fullWidth sx={{ m: 1 }}>
+                    <InputLabel htmlFor="outlined-adornment-amount">Donate</InputLabel>
+                    <OutlinedInput
+                        id="donate_amount"
+                        startAdornment={<InputAdornment position="start">VND</InputAdornment>}
+                        label="Donate"
+                    />
+                </FormControl>
             </Box>
-            <Box minWidth={35}>
+            <Box minWidth={35} style={{marginLeft: "20px"}}>
                 <Button onClick={submitDonate}>Donate</Button>
             </Box>
         </Box>
