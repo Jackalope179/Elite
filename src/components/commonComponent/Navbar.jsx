@@ -14,9 +14,9 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import HomeIcon from "@mui/icons-material/Home";
+import { NotiContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import Dialog_Form from "./Dialog_Form";
-import { PostData } from "../../data/PostData";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -59,6 +59,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 export default function Navbar() {
   let navigate = useNavigate();
+  const [notiOpen, setNotiOpen] = React.useContext(NotiContext);
+
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
@@ -71,6 +73,9 @@ export default function Navbar() {
     setAnchorEl(null);
   };
 
+  const handleNoti = () => {
+    setNotiOpen(!notiOpen);
+  };
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -100,10 +105,16 @@ export default function Navbar() {
       >
         Profile
       </MenuItem>
-      <MenuItem onClick={handleMenuClose}>Log out</MenuItem>
+      <MenuItem
+        onClick={() => {
+          handleMenuClose();
+          navigate("/login");
+        }}
+      >
+        Log out
+      </MenuItem>
     </Menu>
   );
-
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -117,7 +128,6 @@ export default function Navbar() {
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
     <>
       <Box sx={{ flexGrow: 1 }} elevation={0}>
@@ -144,14 +154,23 @@ export default function Navbar() {
                 borderRadius: "15px",
                 marginLeft: "260px",
                 height: "37px",
+                paddingLeft: 50,
               }}
             >
-              <SearchIconWrapper>
+              <SearchIconWrapper
+                style={{
+                  position: "absolute",
+                  left: 0,
+                }}
+              >
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
                 placeholder="Search…"
                 inputProps={{ "aria-label": "search" }}
+                style={{
+                  top: -0.5,
+                }}
               />
             </Search>
             <Box sx={{ flexGrow: 1 }} />
@@ -164,24 +183,29 @@ export default function Navbar() {
                   navigate("/");
                 }}
               >
+                {/* <Badge badgeContent={4} color="error"> */}
                 <HomeIcon style={{ width: "35px", height: "35px" }} />
+                {/* </Badge> */}
               </IconButton>
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"
                 color="inherit"
               >
+                {/* <Badge badgeContent={4} color="error"> */}
                 <AddCircleIcon
                   style={{ width: "30px", height: "30px" }}
                   onClick={handleClickOpen}
                 />
+                {/* </Badge> */}
               </IconButton>
               <IconButton
                 size="large"
                 aria-label="show 17 new notifications"
                 color="inherit"
+                onClick={() => handleNoti()}
               >
-                <Badge badgeContent={17} color="error">
+                <Badge badgeContent={notiOpen ? null : 1} color="error">
                   <NotificationsIcon
                     style={{ width: "30px", height: "30px" }}
                   />

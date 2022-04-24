@@ -1,4 +1,4 @@
-export const PostData = [
+let PostData = [
   {
     id: 1,
     name: "Hoang inc",
@@ -86,3 +86,5 @@ export const PostData = [
     donatersCount: 10,
   },
 ];
+
+export default PostData;

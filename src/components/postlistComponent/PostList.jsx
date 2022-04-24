@@ -1,6 +1,6 @@
 import React from "react";
 import RecipeReviewCard from "../postComponent/post";
-import { PostData } from "../../data/PostData";
+import PostData from "../../data/PostData";
 const PostList = () => {
   return (
     <div className="container" id="scrollbar">

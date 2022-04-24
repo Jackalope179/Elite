@@ -38,6 +38,7 @@ export default function PostContent({ width, hasButtons, data }) {
   const closeForm = () => {
     setOpen(false);
   };
+
   return (
     <>
       <Card
