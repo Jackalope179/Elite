@@ -47,8 +47,8 @@ const Login = () => {
                         variant="contained"
                         onClick={() => {
                             if (
-                                formData.username === "anh" &&
-                                formData.password === "123"
+                                formData.username === "vietanh" &&
+                                formData.password === "123456"
                             )
                                 navigate("/");
                             else alert("Error!");
