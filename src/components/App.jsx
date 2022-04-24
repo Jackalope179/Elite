@@ -6,7 +6,8 @@ import Profile from "./profileComponent/profile";
 import { Route, Routes } from "react-router-dom";
 import "../style/App.css";
 import Login from "./logComponent/login";
-import Noti from "../components/notiComponent/Noti";
+import Detail from "./detailComponent/detail";
+import Noti from './notiComponent/Noti';
 
 export const NotiContext = React.createContext();
 
@@ -36,6 +37,7 @@ const App = () => {
                             </>
                         }
                     />
+                    <Route path="/donate" exact element={<Detail />} />
                 </Routes>
             </div>
         </NotiContext.Provider>

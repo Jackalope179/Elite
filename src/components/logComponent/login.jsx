@@ -15,6 +15,7 @@ const Login = () => {
                 <form action="">
                     <Typography variant="h4">Login</Typography>
                     <TextField
+                        required
                         id="outlined-basic"
                         label="Username"
                         variant="outlined"
@@ -22,8 +23,10 @@ const Login = () => {
                         onChange={changeFormData}
                     />
                     <TextField
+                        required
                         id="outlined-basic"
                         label="Password"
+                        type="password"
                         variant="outlined"
                         name="password"
                         onChange={changeFormData}
