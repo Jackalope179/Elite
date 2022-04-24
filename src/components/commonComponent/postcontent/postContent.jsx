@@ -56,63 +56,66 @@ export default function PostContent({ width, hasButtons, data }) {
   };
 
   return (
-    <Card
-      sx={{ maxWidth: { width }, bgcolor: grey[100] }}
-      style={{ border: "1px solid #eee" }}
-    >
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {data.avatar}
-          </Avatar>
-        }
-        title={data.name}
-        subheader={data.time}
-      />
-      <ImgCarousel width={width} imgs={data.imgs} />
-      <CardContent>
-        <Typography variant="body" style={{ fontWeight: 400 }}>
-          {data.content}
-        </Typography>
-      </CardContent>
-      {hasButtons ? (
-        <CardActions disableSpacing>
-          <IconButton
-            aria-label="add to favorites"
-            onClick={liked ? handleUnLike : handleLike}
-          >
-            {liked ? (
-              <FavoriteIcon style={{ color: "red" }} />
-            ) : (
-              <FavoriteBorderIcon />
-            )}
-          </IconButton>
-          <IconButton
-            aria-label="add to favorites"
-            onClick={() => {
-              navigate("/donate");
-            }}
-          >
-            <AttachMoneyIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-          <IconButton
-            aria-label="share"
-            onClick={() => setIsChecked((prev) => !prev)}
-          >
-            <CommentIcon />
-          </IconButton>
-        </CardActions>
-      ) : null}
-      <Collapse in={isChecked}>
+    <>
+      <Card
+        sx={{ maxWidth: { width }, bgcolor: grey[100] }}
+        style={{ border: "1px solid #eee" }}
+      >
+        <CardHeader
+          avatar={
+            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+              {data.avatar}
+            </Avatar>
+          }
+          title={data.name}
+          subheader={data.time}
+        />
+        <ImgCarousel width={width} imgs={data.imgs} />
         <CardContent>
-          {Comments.map((comment) => {
-            return <Comment content={comment} />;
-          })}
+          <Typography variant="body" style={{ fontWeight: 400 }}>
+            {data.content}
+          </Typography>
         </CardContent>
-      </Collapse>
-    </Card>
+        {hasButtons ? (
+          <CardActions disableSpacing>
+            <IconButton
+              aria-label="add to favorites"
+              onClick={liked ? handleUnLike : handleLike}
+            >
+              {liked ? (
+                <FavoriteIcon style={{ color: "red" }} />
+              ) : (
+                <FavoriteBorderIcon />
+              )}
+            </IconButton>
+            <IconButton
+              aria-label="add to favorites"
+              onClick={() => {
+                navigate("/donate");
+              }}
+            >
+              <AttachMoneyIcon />
+            </IconButton>
+            <IconButton aria-label="share" onClick={handleClickOpen}>
+              <ShareIcon />
+            </IconButton>
+            <IconButton
+              aria-label="share"
+              onClick={() => setIsChecked((prev) => !prev)}
+            >
+              <CommentIcon />
+            </IconButton>
+          </CardActions>
+        ) : null}
+        <Collapse in={isChecked}>
+          <CardContent>
+            {Comments.map((comment) => {
+              return <Comment content={comment} />;
+            })}
+          </CardContent>
+        </Collapse>
+      </Card>
+      <Share_dialog open={open} onClose={closeForm} />
+    </>
   );
 }
