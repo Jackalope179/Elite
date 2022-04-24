@@ -25,10 +25,9 @@ const Detail = () => {
                         time: new Date().toISOString().slice(0, 10),
                         avatar: "H",
                         imgs: [
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYtuh3hUXwLX9QI8hDO_tlRqYcdnDQibP2eA&usqp=CAU",
-                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAVSCtkXXJwnOB82cctXWw50nG7S7IaBUioFx2mEBtfzbtbCTUZeJGeotJidXP9BJ63VY&usqp=CAU",
+                            "http://www.chuahoangphap.com.vn/Images/Charity/hoangphap_ke-hoach-tu-thien-va-phong-sanh-t12019_full_05182019_081828.jpg", "http://www.chuahoangphap.com.vn/Images/News/hp_26313.jpg"
                         ],
-                        content: "lorem ipsum",
+                        content: "Sáng ngày 17/12/2012 (nhằm ngày 5/11 Nhâm Thìn) được sự chỉ dạy của Thượng tọa Trụ trì, đoàn từ thiện chùa Hoằng Pháp do thầy Thích Tâm Huệ làm trưởng đoàn đã đến xã Vĩnh Ngọc, TP. Nha Trang, tỉnh Khánh Hòa để tặng quà cho những hộ dân nghèo tại đây.",
                         liked: false,
                         target: 10000000,
                         donatersCount: 10,

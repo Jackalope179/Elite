@@ -39,7 +39,7 @@ const Login = () => {
                                 formData.password === "123"
                             )
                                 navigate("/");
-                            else alert("cut");
+                            else alert("Username or password not correct!");
                         }}
                     >
                         Login
