@@ -30,5 +30,10 @@ body {
 }
 
 #scrollbar::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  display: none;
+}
+
+#scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }

@@ -1,0 +1,13 @@
+.share-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#share-name {
+  margin-left: 5px;
+}
+
+#share-radio {
+  margin-left: 200px;
+}

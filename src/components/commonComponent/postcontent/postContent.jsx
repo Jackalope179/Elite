@@ -14,6 +14,7 @@ import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 import CardActions from "@mui/material/CardActions";
 import { useNavigate } from "react-router-dom";
+import Share_dialog from "../Share_dialog";
 
 export default function PostContent({ width, hasButtons, data }) {
   let navigate = useNavigate();
@@ -22,50 +23,74 @@ export default function PostContent({ width, hasButtons, data }) {
   const handleLike = () => {
     setLiked(true);
     data.liked = true;
-  }
+  };
 
   const handleUnLike = () => {
     setLiked(false);
     data.liked = false;
-  }
+  };
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const closeForm = () => {
+    setOpen(false);
+  };
   return (
-    <Card
-      sx={{ maxWidth: { width }, bgcolor: grey[100] }}
-      style={{ border: "1px solid #eee" }}
-    >
-      <CardHeader
-        avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            {data.avatar}
-          </Avatar>
-        }
-        title={data.name}
-        subheader={data.time}
-      />
-      <ImgCarousel width={width} imgs={data.imgs}/>
-      <CardContent>
-        <Typography variant="body" style={{ fontWeight: 400 }}>
-          {data.content}
-        </Typography>
-      </CardContent>
-      {hasButtons ? (
-        <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites" onClick={liked ? handleUnLike : handleLike}>
-            {liked ? <FavoriteIcon style={{color: "red"}}/> : <FavoriteBorderIcon /> }
-          </IconButton>
-          <IconButton aria-label="add to favorites" onClick={() => {
-            navigate("/donate");
-          }} >
-            <AttachMoneyIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <CommentIcon />
-          </IconButton>
-        </CardActions>
-      ) : null}
-    </Card>
+    <>
+      <Card
+        sx={{ maxWidth: { width }, bgcolor: grey[100] }}
+        style={{ border: "1px solid #eee" }}
+      >
+        <CardHeader
+          avatar={
+            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+              {data.avatar}
+            </Avatar>
+          }
+          title={data.name}
+          subheader={data.time}
+        />
+        <ImgCarousel width={width} imgs={data.imgs} />
+        <CardContent>
+          <Typography variant="body" style={{ fontWeight: 400 }}>
+            {data.content}
+          </Typography>
+        </CardContent>
+        {hasButtons ? (
+          <CardActions disableSpacing>
+            <IconButton
+              aria-label="add to favorites"
+              onClick={liked ? handleUnLike : handleLike}
+            >
+              {liked ? (
+                <FavoriteIcon style={{ color: "red" }} />
+              ) : (
+                <FavoriteBorderIcon />
+              )}
+            </IconButton>
+            <IconButton
+              aria-label="add to favorites"
+              onClick={() => {
+                navigate("/donate");
+              }}
+            >
+              <AttachMoneyIcon />
+            </IconButton>
+            {/* Share button */}
+            <IconButton aria-label="share">
+              <ShareIcon onClick={handleClickOpen} />
+            </IconButton>
+            {/* -------------- */}
+            <IconButton aria-label="share">
+              <CommentIcon />
+            </IconButton>
+          </CardActions>
+        ) : null}
+      </Card>
+      <Share_dialog open={open} onClose={closeForm} />
+    </>
   );
 }

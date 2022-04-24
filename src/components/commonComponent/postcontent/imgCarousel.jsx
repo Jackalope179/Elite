@@ -38,8 +38,7 @@ const properties = {
   autoplay: false,
 };
 
-export default function ImgCarousel ({width, imgs}) {
-    console.log(imgs);
+export default function ImgCarousel({ width, imgs }) {
   const [isHovering, setIsHovering] = React.useState(false);
   const handleMouseOver = () => {
     setIsHovering(true);
@@ -74,4 +73,4 @@ export default function ImgCarousel ({width, imgs}) {
       </Slide>
     </div>
   );
-};
+}

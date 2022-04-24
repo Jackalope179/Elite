@@ -10,7 +10,7 @@ import "../../style/Dialog_Form.css";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 const Dialog_Form = (props) => {
   const [ListImage, setListImage] = React.useState([]);
-  let onClose = () => {
+  const onClose = () => {
     props.onClose();
   };
   return (
@@ -60,7 +60,7 @@ const Dialog_Form = (props) => {
         })}
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.closeForm}>Cancel</Button>
+        <Button onClick={onClose}>Cancel</Button>
         <Button onClick={onClose}>Post</Button>
       </DialogActions>
     </Dialog>
