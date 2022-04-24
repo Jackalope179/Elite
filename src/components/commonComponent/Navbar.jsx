@@ -16,15 +16,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import HomeIcon from "@mui/icons-material/Home";
 import { useNavigate } from "react-router-dom";
 import Dialog_Form from "./Dialog_Form";
-// import Dialog from "./Dialog_Form";
-
-// import Button from "@mui/material/Button";
-// import TextField from "@mui/material/TextField";
-// import Dialog from "@mui/material/Dialog";
-// import DialogActions from "@mui/material/DialogActions";
-// import DialogContent from "@mui/material/DialogContent";
-// import DialogContentText from "@mui/material/DialogContentText";
-// import DialogTitle from "@mui/material/DialogTitle";
+import { PostData } from "../../data/PostData";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -118,6 +110,10 @@ export default function Navbar() {
     setOpen(true);
   };
 
+  const closeForm = () => {
+    setOpen(false);
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -168,21 +164,17 @@ export default function Navbar() {
                   navigate("/");
                 }}
               >
-                {/* <Badge badgeContent={4} color="error"> */}
                 <HomeIcon style={{ width: "35px", height: "35px" }} />
-                {/* </Badge> */}
               </IconButton>
               <IconButton
                 size="large"
                 aria-label="show 4 new mails"
                 color="inherit"
               >
-                {/* <Badge badgeContent={4} color="error"> */}
                 <AddCircleIcon
                   style={{ width: "30px", height: "30px" }}
                   onClick={handleClickOpen}
                 />
-                {/* </Badge> */}
               </IconButton>
               <IconButton
                 size="large"
@@ -211,7 +203,7 @@ export default function Navbar() {
         </AppBar>
         {renderMenu}
       </Box>
-      <Dialog_Form open={open} onClose={handleClose} />
+      <Dialog_Form open={open} onClose={handleClose} closeform={closeForm} />
     </>
   );
 }

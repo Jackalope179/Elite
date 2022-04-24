@@ -8,9 +8,11 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import "../../style/Dialog_Form.css";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-
 const Dialog_Form = (props) => {
   const [ListImage, setListImage] = React.useState([]);
+  let onClose = () => {
+    props.onClose();
+  };
   return (
     <Dialog open={props.open} onClose={props.onClose} id="dialog-form">
       <DialogTitle>Create new event</DialogTitle>
@@ -19,9 +21,9 @@ const Dialog_Form = (props) => {
           To create an event, plese fill all the field in the box below
         </DialogContentText>
         <TextField
+          id="dialog-form-description"
           autoFocus
           margin="dense"
-          id="name"
           label="Describe Event"
           type="text"
           fullWidth
@@ -30,7 +32,7 @@ const Dialog_Form = (props) => {
         <TextField
           autoFocus
           margin="dense"
-          id="name"
+          id="dialog-form-target"
           label="Desired Income"
           type="number"
           fullWidth
@@ -46,9 +48,9 @@ const Dialog_Form = (props) => {
         {ListImage.map((item, index) => {
           return (
             <TextField
+              className="dialog-form-image"
               autoFocus
               margin="dense"
-              id="name"
               label="Upload Image"
               type="text"
               fullWidth
@@ -58,8 +60,8 @@ const Dialog_Form = (props) => {
         })}
       </DialogContent>
       <DialogActions>
-        <Button onClick={props.onClose}>Cancel</Button>
-        <Button onClick={props.onClose}>Post</Button>
+        <Button onClick={props.closeForm}>Cancel</Button>
+        <Button onClick={onClose}>Post</Button>
       </DialogActions>
     </Dialog>
   );
