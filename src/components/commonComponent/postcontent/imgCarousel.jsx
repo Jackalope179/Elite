@@ -1,6 +1,6 @@
-import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
+import * as React from "react";
 
 const prevArrow = (
   <div style={{ width: "30px", marginRight: "-30px", cursor: "pointer" }}>

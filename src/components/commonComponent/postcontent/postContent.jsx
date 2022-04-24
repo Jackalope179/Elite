@@ -13,8 +13,10 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 import CardActions from "@mui/material/CardActions";
+import { useNavigate } from "react-router-dom";
 
 export default function PostContent({ width, hasButtons, data }) {
+  let navigate = useNavigate();
   const [liked, setLiked] = React.useState(data.liked);
 
   const handleLike = () => {
@@ -51,7 +53,9 @@ export default function PostContent({ width, hasButtons, data }) {
           <IconButton aria-label="add to favorites" onClick={liked ? handleUnLike : handleLike}>
             {liked ? <FavoriteIcon style={{color: "red"}}/> : <FavoriteBorderIcon /> }
           </IconButton>
-          <IconButton aria-label="add to favorites">
+          <IconButton aria-label="add to favorites" onClick={() => {
+            navigate("/donate");
+          }} >
             <AttachMoneyIcon />
           </IconButton>
           <IconButton aria-label="share">
