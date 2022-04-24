@@ -7,7 +7,8 @@ import { Route, Routes } from "react-router-dom";
 import "../style/App.css";
 import Login from "./logComponent/login";
 import Detail from "./detailComponent/detail";
-import Noti from './notiComponent/Noti';
+import Noti from "./notiComponent/Noti";
+import Register from "./logComponent/register";
 
 export const NotiContext = React.createContext();
 
@@ -20,6 +21,7 @@ const App = () => {
                 <Routes>
                     <Route path="/profile" exact element={<Profile />} />
                     <Route path="/login" exact element={<Login />} />
+                    <Route path="/register" exact element={<Register />} />
                     <Route
                         path="/"
                         exact

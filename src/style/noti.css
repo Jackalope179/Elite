@@ -4,7 +4,7 @@ div.comment-container {
     background-color: #eee;
     position: fixed;
     z-index: 100;
-    left: 900px;
+    right: 200px;
     top:60px;
 }
 
