@@ -13,11 +13,26 @@ import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import CommentIcon from "@mui/icons-material/Comment";
 import ShareIcon from "@mui/icons-material/Share";
 import CardActions from "@mui/material/CardActions";
+import Collapse from '@mui/material/Collapse';
+import Comment from '../../commonComponent/Comment';
 import { useNavigate } from "react-router-dom";
+
+const Comments = [
+  {
+    avatar: "H",
+    name: "Hoang Nguyen",
+    text: "Thật là một hoạt động bổ ích"
+  }, {
+    avatar: "A",
+    name: "Anh Nguyen",
+    text: "Quá tuyệt vời"
+  }
+];
 
 export default function PostContent({ width, hasButtons, data }) {
   let navigate = useNavigate();
   const [liked, setLiked] = React.useState(data.liked);
+  const [isChecked, setIsChecked] = React.useState(false);
 
   const handleLike = () => {
     setLiked(true);
@@ -40,7 +55,7 @@ export default function PostContent({ width, hasButtons, data }) {
         title={data.name}
         subheader={data.time}
       />
-      <ImgCarousel width={width} imgs={data.imgs}/>
+      <ImgCarousel width={width} imgs={data.imgs} />
       <CardContent>
         <Typography variant="body" style={{ fontWeight: 400 }}>
           {data.content}
@@ -49,7 +64,7 @@ export default function PostContent({ width, hasButtons, data }) {
       {hasButtons ? (
         <CardActions disableSpacing>
           <IconButton aria-label="add to favorites" onClick={liked ? handleUnLike : handleLike}>
-            {liked ? <FavoriteIcon style={{color: "red"}}/> : <FavoriteBorderIcon /> }
+            {liked ? <FavoriteIcon style={{ color: "red" }} /> : <FavoriteBorderIcon />}
           </IconButton>
           <IconButton aria-label="add to favorites" onClick={() => {
             navigate("/donate");
@@ -59,11 +74,18 @@ export default function PostContent({ width, hasButtons, data }) {
           <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
-          <IconButton aria-label="share">
+          <IconButton aria-label="share" onClick={() => setIsChecked((prev) => !prev)}>
             <CommentIcon />
           </IconButton>
         </CardActions>
       ) : null}
+      <Collapse in={isChecked}>
+        <CardContent> 
+         {Comments.map((comment) => {
+           return <Comment content={comment} />
+         })}
+        </CardContent>
+      </Collapse>
     </Card>
   );
 }
